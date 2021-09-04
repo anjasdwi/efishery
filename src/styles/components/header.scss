@@ -1,0 +1,13 @@
+header {
+  background-color: $primary;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  h1 {
+    color: $white;
+    font-family: $montserrat;
+    font-size: 24px;
+  }
+}
