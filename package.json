@@ -58,7 +58,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "src/*.js": [
       "yarn run lint:fix",
       "yarn run format"
     ]
