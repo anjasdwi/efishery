@@ -17,6 +17,13 @@ body {
   line-height: 20px;
 }
 
+a {
+  color: $primary;
+  &:hover {
+    color: $primary;
+  }
+}
+
 button {
   cursor: pointer;
 }

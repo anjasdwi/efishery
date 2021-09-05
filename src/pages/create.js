@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import JsonToForm from 'json-reactform'
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import {Link} from 'react-router-dom'
 
 import model from 'scheme/createPrice'
 import {useDispatch, useSelector} from 'react-redux'
@@ -63,6 +65,10 @@ const CreatePrice = () => {
   return (
     <>
       <h1 className="mb-3">Buat Baru</h1>
+      <Breadcrumb>
+        <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
+        <BreadcrumbItem active>Tambah Komoditas</BreadcrumbItem>
+      </Breadcrumb>
       {meta.prices === 'submit' && (
         <ModalLoader isOpen={meta.prices === 'submit'} fullScreen={false} />
       )}
