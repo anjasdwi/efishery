@@ -39,6 +39,7 @@ const ModalFilter = ({toggle, onSubmit, onReset, values, setValues, ...props}) =
             <FormGroup>
               <Label for="area">Area</Label>
               <Select
+                placeholder="Cari & Pilih Area"
                 options={areas}
                 value={values.area}
                 onChange={(e) => setValues({
@@ -50,6 +51,7 @@ const ModalFilter = ({toggle, onSubmit, onReset, values, setValues, ...props}) =
             <FormGroup>
               <Label for="size">Ukuran</Label>
               <Select
+                placeholder="Cari & Pilih Ukuran"
                 options={sizes}
                 value={values.size}
                 onChange={(e) => setValues({

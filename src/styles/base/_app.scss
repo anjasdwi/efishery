@@ -25,3 +25,24 @@
     font-family: $montserrat;
   }
 }
+
+@media only screen and (max-width: $mobile) {
+  .app {
+    padding: 1rem 0rem 5rem;
+  }
+
+  .app-search {
+    .btn-group {
+      margin: 5%;
+      left: 0;
+      right: 0;
+      position: fixed;
+      bottom: 0;
+
+      button {
+        @include btn-eFishery;
+        color: $white !important;
+      }
+    }
+  }
+}

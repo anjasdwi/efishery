@@ -62,7 +62,7 @@ const CreatePrice = () => {
 
   return (
     <>
-      <h1>Buat Baru</h1>
+      <h1 className="mb-3">Buat Baru</h1>
       {meta.prices === 'submit' && (
         <ModalLoader isOpen={meta.prices === 'submit'} fullScreen={false} />
       )}

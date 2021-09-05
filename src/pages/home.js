@@ -199,7 +199,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="mb-3 d-flex justify-content-between align-items-center">
+      <div className="price-header">
         <h1>Harga Ikan di Indonesia</h1>
         <Button
           className="btn-eFishery"

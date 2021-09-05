@@ -29,6 +29,7 @@
     letter-spacing: 1px;
     margin-bottom: 0.25rem;
   }
+
   &__value {
     @include caption;
     font-weight: 600;
@@ -39,13 +40,43 @@
   }
 }
 
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .form-create-price {
   background-color: $white;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 4px;
   border: 1px solid $divider;
 
   .btn-success {
     @include btn-eFishery;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .price-list {
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      > div:nth-child(1),
+      > div:nth-child(2) {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  .price-header {
+    flex-direction: column;
+    align-items: baseline;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
   }
 }
