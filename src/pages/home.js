@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {lazy, useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {Button, Spinner} from 'reactstrap'
@@ -6,9 +6,10 @@ import {Button, Spinner} from 'reactstrap'
 import {getPrices, sortingPrice} from 'store/actions/prices'
 import SectionSearch from 'components/SectionSearch'
 import PriceList from 'components/PriceList'
-import EmptyState from 'components/EmptyState'
-import ModalFilter from 'components/modal/filter'
-import ModalSorter from 'components/modal/sorter'
+
+const EmptyState = lazy(() => import('components/EmptyState'))
+const ModalFilter = lazy(() => import('components/modal/filter'))
+const ModalSorter = lazy(() => import('components/modal/sorter'))
 
 const HomePage = () => {
   const LIMIT_DEFAULT = 10
