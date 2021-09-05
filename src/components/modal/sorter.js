@@ -43,6 +43,18 @@ const ModalSorter = ({toggle, onSubmit, onChange, value, ...props}) => (
 						Nama A-Z
           </Label>
         </FormGroup>
+        <FormGroup check className="my-2">
+          <Label check>
+            <Input
+              type="radio"
+              name="sorter"
+              value="tgl_parsed"
+              onChange={onChange}
+              checked={value === 'tgl_parsed'} 
+            />
+						Tanggal Terbaru
+          </Label>
+        </FormGroup>
       </FormGroup>
     </ModalBody>
     <ModalFooter>

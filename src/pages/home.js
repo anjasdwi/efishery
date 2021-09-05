@@ -134,6 +134,8 @@ const HomePage = () => {
     const sorting = data.prices.sort((a, b) => {
       if (sorter === 'komoditas') {
         return a[sorter].toLowerCase() > b[sorter].toLowerCase() ? 1 : -1
+      } else if (sorter === 'tgl_parsed') {
+        return a[sorter] < b[sorter] ? 1 : -1
       }
       return parseInt(a[sorter]) < parseInt(b[sorter]) ? 1 : -1
     })
