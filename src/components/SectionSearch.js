@@ -33,6 +33,7 @@ const SectionSearch = ({filter, setFilter, onSearch, toggleModal}) => (
       >
         Filter
       </Button>
+      <div className="divider" />
       <Button
         className="btn-outline-eFishery"
         outline

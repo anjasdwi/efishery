@@ -5,3 +5,31 @@
 .btn-outline-eFishery {
   @include btn-outline-eFishery;
 }
+
+.btn-loadmore {
+  width: auto;
+}
+
+.btn-fab-efishery {
+  background-color: $primary;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: $white;
+  position: fixed;
+  bottom: 32px;
+  right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: $mobile) {
+  .btn-loadmore {
+    width: 100%;
+  }
+
+  .btn-fab-efishery {
+    bottom: 24px;
+  }
+}

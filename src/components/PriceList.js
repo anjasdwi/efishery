@@ -22,7 +22,7 @@ const PriceList = ({
   }
 
   return (
-    <div className="price-list">
+    <div className="price-list shadow-sm">
       <div className="price-list__date text-muted mb-2">
         Tanggal: {tgl_parsed ? dateFormat(tgl_parsed) : '-'}
       </div>

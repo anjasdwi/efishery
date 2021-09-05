@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className="shadow-sm">
+    <header className="shadow">
       <div className="container">
         <Link to="/" className="text-decoration-none">
           <h1>eFishery</h1>

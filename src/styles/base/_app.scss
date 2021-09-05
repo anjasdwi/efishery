@@ -33,15 +33,20 @@
 
   .app-search {
     .btn-group {
-      margin: 5%;
+      margin: 5% auto;
       left: 0;
       right: 0;
       position: fixed;
       bottom: 0;
+      max-width: 200px;
 
       button {
         @include btn-eFishery;
         color: $white !important;
+      }
+
+      .divider {
+        border: 1px solid $primary-02;
       }
     }
   }

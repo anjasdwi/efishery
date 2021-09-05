@@ -6,6 +6,8 @@ import {Button, Spinner} from 'reactstrap'
 import {getPrices, sortingPrice} from 'store/actions/prices'
 import SectionSearch from 'components/SectionSearch'
 import PriceList from 'components/PriceList'
+import FAB from 'components/FAB'
+import ArrowUpward from 'components/Icons/ArrowUpward'
 
 const EmptyState = lazy(() => import('components/EmptyState'))
 const ModalFilter = lazy(() => import('components/modal/filter'))
@@ -18,6 +20,7 @@ const HomePage = () => {
   const dispatch = useDispatch()
   const {data, meta} = useSelector(({prices}) => prices)
 
+  const [scrollTop, setScrollTop] = useState(0)
   const [modal, setModal] = useState({
     filter: false,
     sorter: false
@@ -44,6 +47,8 @@ const HomePage = () => {
   const showSpinner = () => {
     return meta.prices === 'loadmore' || meta.prices === 'fetch'
   }
+
+  const onScrollTop = () => window.scrollTo({top: 0, behavior: 'smooth'})
 
   const setParamsFilter = () => {
     let params = {}
@@ -199,6 +204,16 @@ const HomePage = () => {
     dispatch(getPrices({params: pagination}))
   }, [])
 
+  useEffect(() => {
+    const onScroll = (e) => {
+      setScrollTop(e.target.documentElement.scrollTop)
+    }
+    window.addEventListener('scroll', onScroll)
+
+    console.log({scrollTop})
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [scrollTop])
+
   return (
     <>
       <div className="price-header">
@@ -251,8 +266,12 @@ const HomePage = () => {
         {showSpinner() ? (
           <Spinner className="spinner-eFishery" />
         ) : showLoadMore() ? (
-          <Button className="btn-outline-eFishery" outline onClick={loadMore}>
-            Muat lebih banyak
+          <Button
+            className="btn-outline-eFishery btn-loadmore"
+            outline
+            onClick={loadMore}
+          >
+            Muat Lebih Banyak
           </Button>
         ) : (
           data.prices.length === 0 && (
@@ -266,6 +285,12 @@ const HomePage = () => {
           )
         )}
       </div>
+
+      {scrollTop >= 200 && (
+        <FAB onClick={onScrollTop}>
+          <ArrowUpward fill="#fff" />
+        </FAB>
+      )}
     </>
   )
 }
