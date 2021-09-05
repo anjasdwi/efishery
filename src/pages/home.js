@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {Button, FormGroup, Input, Spinner, ButtonGroup} from 'reactstrap'
+import {Button, Spinner} from 'reactstrap'
 
 import {getPrices, sortingPrice} from 'store/actions/prices'
+import SectionSearch from 'components/SectionSearch'
 import PriceList from 'components/PriceList'
 import EmptyState from 'components/EmptyState'
 import ModalFilter from 'components/modal/filter'
@@ -230,49 +231,12 @@ const HomePage = () => {
         />
       )}
 
-      <div className="app-search mb-3">
-        <div className="d-flex">
-          <FormGroup className="mb-0">
-            <Input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Cari Komoditas"
-              value={filter.komoditas}
-              onChange={(e) =>
-                setFilter({
-                  ...filter,
-                  komoditas: e.target.value
-                })
-              }
-            />
-          </FormGroup>
-          <Button
-            className="btn-outline-eFishery ml-2"
-            outline
-            onClick={onSearch}
-          >
-            Cari
-          </Button>
-        </div>
-
-        <ButtonGroup>
-          <Button
-            className="btn-outline-eFishery"
-            outline
-            onClick={toggleModal('filter')}
-          >
-            Filter
-          </Button>
-          <Button
-            className="btn-outline-eFishery"
-            outline
-            onClick={toggleModal('sorter')}
-          >
-            Urutkan
-          </Button>
-        </ButtonGroup>
-      </div>
+      <SectionSearch
+        filter={filter}
+        setFilter={setFilter}
+        onSearch={onSearch}
+        toggleModal={toggleModal}
+      />
 
       {meta.prices === 'searching' ? (
         <div className="d-flex justify-content-center mb-3">
