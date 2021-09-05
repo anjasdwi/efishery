@@ -11,7 +11,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^8.0.2",
+    "react-uuid": "^1.0.2",
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
@@ -24,8 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/*.js",
-    "lint:fix": "eslint src/*.js --fix",
-    "format": "prettier src/*.js --write"
+    "lint:fix": "eslint src/**/*.js --fix",
+    "format": "prettier src/**/*.js --write"
   },
   "eslintConfig": {
     "extends": [
@@ -48,9 +51,9 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.25.1",
-    "prettier": "^2.3.2",
+    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
-    "husky": "^7.0.2"
+    "prettier": "^2.3.2"
   },
   "husky": {
     "hooks": {
@@ -58,7 +61,7 @@
     }
   },
   "lint-staged": {
-    "src/*.js": [
+    "src/**/*.js": [
       "yarn run lint:fix",
       "yarn run format"
     ]

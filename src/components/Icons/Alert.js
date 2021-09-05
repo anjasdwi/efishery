@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const AlertIcon = (props) => (
   <svg
@@ -13,10 +14,14 @@ const AlertIcon = (props) => (
   </svg>
 )
 
-AlertIcon.propTypes = {
+AlertIcon.defaultProps = {
   width: 24,
-  height: 24,
+  height: 24
+}
+
+AlertIcon.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
 }
 
 export default AlertIcon
-

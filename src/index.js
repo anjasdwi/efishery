@@ -2,21 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
-import App from './App'
 import reportWebVitals from './reportWebVitals'
+import AppRouter from 'routers/AppRouter'
 import configureStore from 'store/configureStore'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-toastify/dist/ReactToastify.css'
 import './styles/styles.scss'
 
 const store = configureStore()
 
 const app = (
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
 )
 
 ReactDOM.render(app, document.getElementById('root'))

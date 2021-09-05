@@ -1,23 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PriceList = ({komoditas, size, price, area_kota, area_provinsi}) => (
-  <div className="price-list">
-    <div className="price-list__commodity">{komoditas}</div>
-    <div className="price-list__size">Ukuran: {size}</div>
-    <div className="price-list__price">{price}</div>
-    <div className="price-list__area">
-      {`${area_kota}, ${area_provinsi}`}
+import {capitalizeTheFirstLetter} from 'utils/string'
+
+const PriceList = ({komoditas, size, price, area_kota, area_provinsi}) => {
+  const setArea = () => {
+    return `${capitalizeTheFirstLetter(
+      area_kota ? area_kota.toLowerCase() : ''
+    )}, ${capitalizeTheFirstLetter(
+      area_provinsi ? area_provinsi.toLowerCase() : ''
+    )}`
+  }
+
+  return (
+    <div className="price-list">
+      <div>
+        <div className="price-list__commodity">{komoditas}</div>
+        <div className="price-list__area">
+          <span>Area</span>: {setArea()}
+        </div>
+      </div>
+      <div className="price-list__size">Ukuran: {size}</div>
+      <div className="price-list__price">{price}</div>
     </div>
-  </div>
-)
+  )
+}
 
 PriceList.defaultProps = {
   komoditas: '',
   size: '',
   price: '',
   area_kota: '',
-  area_provinsi: '',
+  area_provinsi: ''
 }
 
 PriceList.propTypes = {
@@ -25,8 +39,7 @@ PriceList.propTypes = {
   size: PropTypes.string,
   price: PropTypes.string,
   area_kota: PropTypes.string,
-  area_provinsi: PropTypes.string,
+  area_provinsi: PropTypes.string
 }
 
 export default PriceList
-

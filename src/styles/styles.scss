@@ -1,5 +1,10 @@
 @import './base/settings';
+@import './abstracts/mixins';
 @import './base/base';
 @import './base/app';
 @import './components/header';
 @import './components/prices';
+@import './components/button';
+@import './components/spinner';
+@import './components/modal';
+@import './components/form';

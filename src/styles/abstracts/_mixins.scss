@@ -1,0 +1,25 @@
+@mixin caption {
+  line-height: 16px;
+  letter-spacing: 0.25px;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: $montserrat;
+}
+
+@mixin btn-eFishery {
+  background-color: $primary !important;
+  border-color: $primary !important;
+  font-family: $montserrat;
+}
+
+@mixin btn-outline-eFishery {
+  color: $primary !important;
+  border-color: $primary !important;
+  font-family: $montserrat;
+
+  &:hover {
+    background-color: $primary !important;
+    border-color: $primary !important;
+    color: $white !important;
+  }
+}

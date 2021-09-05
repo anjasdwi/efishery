@@ -16,6 +16,17 @@ const priceReducers = (state = initialState, action) => {
       ...state,
       data: {
         ...state.data,
+        prices: action.meta === 'loadmore' ? [
+          ...state.data.prices,
+          ...action.payload,
+        ] : action.payload
+      },
+    }
+  case actionTypes.SET_SORTING_PRICES:
+    return {
+      ...state,
+      data: {
+        ...state.data,
         prices: action.payload
       },
     }
