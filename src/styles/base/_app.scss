@@ -16,13 +16,7 @@
   align-items: center;
 
   label {
-    @include caption;
     margin-bottom: 0.25rem;
-    font-weight: 400;
-  }
-
-  .form-control {
-    font-family: $montserrat;
   }
 }
 

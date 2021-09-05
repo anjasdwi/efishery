@@ -1,4 +1,18 @@
+label {
+  @include caption;
+  font-weight: 400;
+}
+
 .form-check-label {
   font-family: $montserrat;
   font-weight: 500;
+}
+
+.form-control {
+  font-family: $montserrat;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: none;
+  }
 }

@@ -210,7 +210,6 @@ const HomePage = () => {
     }
     window.addEventListener('scroll', onScroll)
 
-    console.log({scrollTop})
     return () => window.removeEventListener('scroll', onScroll)
   }, [scrollTop])
 
