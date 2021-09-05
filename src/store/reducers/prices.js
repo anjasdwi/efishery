@@ -5,6 +5,7 @@ const initialState = {
     prices: [],
   },
   meta: {
+    fullLoadedPrice: false,
     prices: 'fetch'
   }
 }
@@ -37,6 +38,14 @@ const priceReducers = (state = initialState, action) => {
         ...state.meta,
         prices: action.payload,
       },
+    }
+  case actionTypes.SET_META_FULL_LOAD:
+    return {
+      ...state,
+      meta: {
+        ...state.meta,
+        fullLoadedPrice: action.payload
+      }
     }
   default:
     return state

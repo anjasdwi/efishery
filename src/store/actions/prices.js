@@ -7,7 +7,8 @@ import apiPath, {urlApi} from 'constant/apiPath'
 export const actionTypes = {
   SET_DATA_PRICES: 'SET_DATA_PRICES',
   SET_SORTING_PRICES: 'SET_SORTING_PRICES',
-  SET_META_PRICES: 'SET_META_PRICES'
+  SET_META_PRICES: 'SET_META_PRICES',
+  SET_META_FULL_LOAD: 'SET_META_FULL_LOAD'
 }
 
 const payloadToast = {
@@ -36,6 +37,13 @@ export const getPrices = ({meta = 'fetch', params = {}} = {}) => async dispatch 
       type: actionTypes.SET_DATA_PRICES,
       payload: prices.filter((price) => price.uuid),
     })
+
+    if (prices.length === 0) {
+      dispatch({
+        type: actionTypes.SET_META_FULL_LOAD,
+        payload: true,
+      })
+    }
 
     dispatch({
       type: actionTypes.SET_META_PRICES,

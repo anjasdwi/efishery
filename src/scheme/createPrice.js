@@ -5,7 +5,7 @@ export default ({areas, sizes}) => {
       required: true
     },
     Harga: {
-      type: 'number',
+      type: 'currency',
       required: true
     },
     Ukuran: {

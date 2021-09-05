@@ -32,7 +32,11 @@ const HomePage = () => {
   const [sorter, setSorter] = useState('')
 
   const showLoadMore = () => {
-    return data.prices.length > 0 && meta.prices !== 'searching'
+    return (
+      data.prices.length > 0 &&
+      meta.prices !== 'searching' &&
+      !meta.fullLoadedPrice
+    )
   }
 
   const showSpinner = () => {
@@ -140,26 +144,28 @@ const HomePage = () => {
   }
 
   const loadMore = () => {
-    const searchParams = setParamsFilter()
-    let page = {
-      limit: pagination.limit + LIMIT_DEFAULT,
-      offset: pagination.limit + 1
-    }
+    if (!meta.fullLoadedPrice) {
+      const searchParams = setParamsFilter()
+      let page = {
+        limit: LIMIT_DEFAULT,
+        offset: pagination.offset + LIMIT_DEFAULT
+      }
 
-    setPagination(page)
-    dispatch(
-      getPrices({
-        meta: 'loadmore',
-        params: {
-          ...page,
-          search: {
-            ...searchParams
+      setPagination(page)
+      dispatch(
+        getPrices({
+          meta: 'loadmore',
+          params: {
+            ...page,
+            search: {
+              ...searchParams
+            }
           }
-        }
-      })
-    )
+        })
+      )
 
-    setSorter('')
+      setSorter('')
+    }
   }
 
   const onSearch = () => {
@@ -191,8 +197,8 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="mb-3">
-        <h1>Daftar Harga Ikan di Indonesia</h1>
+      <div className="mb-3 d-flex justify-content-between align-items-center">
+        <h1>Harga Ikan di Indonesia</h1>
         <Button
           className="btn-eFishery"
           onClick={() => history.push('/create')}

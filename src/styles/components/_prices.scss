@@ -1,11 +1,14 @@
 .price-list {
-  padding: 1.5rem;
+  padding: 0.5rem 1rem 1rem;
   border: 1px solid $divider;
   border-radius: 4px;
   margin-bottom: 1rem;
   background-color: $white;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   &__commodity {
     font-family: $montserrat;
@@ -16,8 +19,19 @@
     @include caption;
   }
 
-  &__size {
-    // color: red;
+  &__date {
+    @include caption;
+    font-size: 10px;
+  }
+
+  &__label {
+    @include caption;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+  }
+  &__value {
+    @include caption;
+    font-weight: 600;
   }
 
   &__area {
