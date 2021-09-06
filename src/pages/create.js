@@ -1,26 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
-import JsonToForm from 'json-reactform'
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
-import {Link} from 'react-router-dom'
-
-import model from 'scheme/createPrice'
 import {useDispatch, useSelector} from 'react-redux'
-import {Spinner} from 'reactstrap'
 import uuid from 'react-uuid'
 
-import ModalLoader from 'components/modal/loader'
+import model from 'scheme/createPrice'
 import {createNewPrice} from 'store/actions/prices'
-import {getAreas, getSizes} from 'store/actions/options'
+import FormPrice from 'components/FormPrice'
+import useOptions from 'hooks/useOptions'
 
 const CreatePrice = () => {
   const history = useHistory()
   const dispatch = useDispatch()
-  const {data} = useSelector(({options}) => options)
   const {meta} = useSelector(({prices}) => prices)
-  const {areas = [], sizes = []} = data || {}
-
-  const [loader, setLoader] = useState(true)
+  const {areas, sizes, loader} = useOptions()
 
   const onSubmit = (params) => {
     const {
@@ -48,40 +40,19 @@ const CreatePrice = () => {
     dispatch(createNewPrice(payload))
   }
 
-  useEffect(async () => {
-    setLoader(true)
-    const dispatchAreas = dispatch(getAreas())
-    const dispatchSizes = dispatch(getSizes())
-
-    await Promise.all([dispatchAreas, dispatchSizes])
-
-    setLoader(false)
-  }, [])
-
   useEffect(() => {
     if (meta.prices === 'created') history.push('/')
   }, [meta])
 
   return (
-    <>
-      <h1 className="mb-3">Buat Baru</h1>
-      <Breadcrumb>
-        <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
-        <BreadcrumbItem active>Tambah Komoditas</BreadcrumbItem>
-      </Breadcrumb>
-      {meta.prices === 'submit' && (
-        <ModalLoader isOpen={meta.prices === 'submit'} fullScreen={false} />
-      )}
-      <div className="form-create-price">
-        {!loader ? (
-          <JsonToForm model={model({areas, sizes})} onSubmit={onSubmit} />
-        ) : (
-          <div className="d-flex justify-content-center">
-            <Spinner className="spinner-eFishery" />
-          </div>
-        )}
-      </div>
-    </>
+    <FormPrice
+      meta={meta}
+      title="Buat Baru"
+      breadcrumb="Tambah Komoditas"
+      model={model({areas, sizes})}
+      onSubmit={onSubmit}
+      loader={loader}
+    />
   )
 }
 
