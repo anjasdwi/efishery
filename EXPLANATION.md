@@ -64,3 +64,6 @@ dan akan dialihkan ke halaman ubah dan hapus seperti gambar ini.
 
 ![Home](/public/assets/edit.png)
 
+Tersedia component Breadcrumb dan kolom input seperti yang dijelaskan sebelumnya.
+Terdapat juga tombol hapus jika user ingin menghapus data.
+Jika user berhasil merubah dan menghapus data maka akan muncul notifikasi seperti penjelasan sebelumnya.
