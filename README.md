@@ -1,43 +1,15 @@
 <p align="center">
-  <h3 align="center">eFishery Skill Test</h3>
+  <h1 align="center">eFishery Skill Test</h1>
 
   <p align="center">
 	  <a href="https://efishery.herokuapp.com/">View Demo</a>
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
+This project made and developed for a skill test to become frontend engineer at eFishery.
 
 ### Built With
 
@@ -49,7 +21,8 @@ Here's a blank template to get started:
 
 ## Prerequisites
 
-Before you install this project, make sure you have installed docker on your computer.
+Before you install this project, make sure you have installed [docker](https://docs.docker.com/engine/install/) on your computer.
+If docker already installs on your computer, let's go to the next step.
 
 ## Installation
 
