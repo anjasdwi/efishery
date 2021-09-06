@@ -30,11 +30,13 @@ If docker already installs on your computer, let's go to the next step.
 * Clone the repo
    ```sh
    git clone https://github.com/rikopernando/efishery.git
+	 cd efishery
    ```
-
 ## Available Scripts
 
 In the project directory, you can run:
+
+### Docker
 
 #### `yarn run dev`
 
@@ -59,6 +61,25 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Runs the app in the production mode.\
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
+### Local
+#### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+#### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Contact
 
