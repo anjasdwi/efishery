@@ -6,6 +6,10 @@ label {
 .form-check-label {
   font-family: $montserrat;
   font-weight: 500;
+
+  .form-check-input {
+    margin-top: 0.125rem;
+  }
 }
 
 .form-control {

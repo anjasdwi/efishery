@@ -190,13 +190,6 @@ const HomePage = () => {
           }
         })
       )
-    } else {
-      dispatch(
-        getPrices({
-          meta: 'searching',
-          params: pagination
-        })
-      )
     }
   }
 
