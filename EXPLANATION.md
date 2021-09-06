@@ -71,8 +71,13 @@ Jika user berhasil merubah dan menghapus data maka akan muncul notifikasi sepert
 
 ## Mobile
 Jika diakses via mobile maka akan terlihat seperti ini.
+
 ![Home](/public/assets/mob-1.png)
+
 ![Home](/public/assets/mob-2.png)
+
 ![Home](/public/assets/mob-3.png)
+
 ![Home](/public/assets/mob-4.png)
+
 ![Home](/public/assets/mob-5.png)
