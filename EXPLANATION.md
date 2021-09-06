@@ -67,3 +67,12 @@ dan akan dialihkan ke halaman ubah dan hapus seperti gambar ini.
 Tersedia component Breadcrumb dan kolom input seperti yang dijelaskan sebelumnya.
 Terdapat juga tombol hapus jika user ingin menghapus data.
 Jika user berhasil merubah dan menghapus data maka akan muncul notifikasi seperti penjelasan sebelumnya.
+
+
+## Mobile
+Jika diakses via mobile maka akan terlihat seperti ini.
+![Home](/public/assets/mob-1.png)
+![Home](/public/assets/mob-2.png)
+![Home](/public/assets/mob-3.png)
+![Home](/public/assets/mob-4.png)
+![Home](/public/assets/mob-5.png)
