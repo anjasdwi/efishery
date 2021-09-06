@@ -14,7 +14,7 @@ const ModalFilter = lazy(() => import('components/modal/filter'))
 const ModalSorter = lazy(() => import('components/modal/sorter'))
 
 const HomePage = () => {
-  const LIMIT_DEFAULT = 10
+  const LIMIT_DEFAULT = 20
 
   let history = useHistory()
   const dispatch = useDispatch()
