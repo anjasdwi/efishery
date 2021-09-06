@@ -3,8 +3,8 @@ import {useHistory} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import uuid from 'react-uuid'
 
-import model from 'scheme/createPrice'
 import {createNewPrice} from 'store/actions/prices'
+import model from 'scheme/createPrice'
 import FormPrice from 'components/FormPrice'
 import useOptions from 'hooks/useOptions'
 

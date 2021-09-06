@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import JsonToForm from 'json-reactform'
-import {Breadcrumb, BreadcrumbItem} from 'reactstrap'
+import {Spinner, Button, Breadcrumb, BreadcrumbItem} from 'reactstrap'
 import {Link} from 'react-router-dom'
-import {Spinner, Button} from 'reactstrap'
 
 import ModalLoader from 'components/modal/loader'
 

@@ -5,6 +5,8 @@ WORKDIR /app
 # Cache and Install dependencies
 COPY package.json .
 COPY yarn.lock .
+RUN apk add --update python make g++\
+   && rm -rf /var/cache/apk/*
 RUN yarn install
 # Copy app files
 COPY . .
@@ -20,6 +22,8 @@ WORKDIR /app
 # Cache and Install dependencies
 COPY package.json .
 COPY yarn.lock .
+RUN apk add --update python make g++\
+   && rm -rf /var/cache/apk/*
 RUN yarn install --production
 # Copy app files
 COPY . .

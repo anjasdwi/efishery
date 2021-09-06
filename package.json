@@ -33,7 +33,7 @@
     "format": "prettier src/**/*.js --write",
     "prod": "node server/index.js",
     "heroku-postbuild": "npm run build",
-    "dev": "docker-compose -f docker-compose.dev.yml up",
+    "dev": "docker-compose -f docker-compose.dev.yml up -d",
     "build:app": "docker-compose -f docker-compose.prod.yml build",
     "live:prod": "docker run -p 5000:81 --name efishery-app app-prod"
   },
