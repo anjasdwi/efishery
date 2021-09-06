@@ -20,11 +20,6 @@ This project made and developed for a skill test to become frontend engineer at 
 * [STEIN](https://github.com/steinhq/)
 * [Node Js](https://nodejs.org/en/)
 
-## Prerequisites
-
-Before you install this project, make sure you have installed [docker](https://docs.docker.com/engine/install/) on your computer.
-If docker already installs on your computer, let's go to the next step.
-
 ## Installation
 
 * Clone the repo
@@ -37,6 +32,9 @@ If docker already installs on your computer, let's go to the next step.
 In the project directory, you can run:
 
 ### Docker
+
+Before you running this section, make sure you have installed [docker](https://docs.docker.com/engine/install/) on your computer.
+If docker already installs on your computer, let's go to the next step.
 
 #### `yarn run dev`
 
