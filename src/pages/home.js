@@ -258,6 +258,7 @@ const HomePage = () => {
           <Spinner className="spinner-eFishery" />
         </div>
       ) : (
+        meta.prices !== 'fetch' &&
         data.prices.map((price, key) => <PriceList key={key} {...price} />)
       )}
 

@@ -5,9 +5,11 @@
   margin-bottom: 1rem;
   background-color: $white;
   transition: all ease 0.3s;
+  cursor: pointer;
 
   &:hover {
-    background-color: $black-warm;
+    background-color: $primary-transparent;
+    border-color: $primary;
   }
 
   &-grid {
@@ -73,6 +75,12 @@
       > div:nth-child(2) {
         margin-bottom: 0.25rem;
       }
+    }
+
+    &__commodity {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.25px;
     }
   }
 

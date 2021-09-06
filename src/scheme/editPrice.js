@@ -1,39 +1,49 @@
-export default ({areas, sizes}) => {
+export default ({areas, sizes, values}) => {
+  const {
+    komoditas = '',
+    price = 0,
+    size = 0,
+    area_kota = '',
+    area_provinsi = '',
+    tgl_parsed = ''
+  } = values || {}
+  const area = `${area_kota}, ${area_provinsi}`
+
   return {
     Komoditas: {
       type: 'text',
       placeholder: 'Komoditas',
       required: true,
-      defaultValue: 'adas'
+      defaultValue: komoditas
     },
     Harga: {
       type: 'currency',
       placeholder: 'Harga',
       required: true,
-      defaultValue: '10000'
+      defaultValue: price
     },
     Ukuran: {
       type: 'select',
       required: true,
       placeholder: 'Cari & Pilih Ukuran',
       options: sizes || [],
-      defaultValue: '30'
+      defaultValue: size
     },
     Area: {
       type: 'select',
       required: true,
       placeholder: 'Cari & Pilih Area',
       options: areas || [],
-      defaultValue: 'ACEH KOTA, ACEH'
+      defaultValue: area
     },
     Tanggal: {
       type: 'date',
       placeholder: 'Tanggal',
       format: 'dd MMMM yyyy',
       required: true,
-      defaultValue: new Date('2020-06-09T15:08:58.122Z')
+      defaultValue: tgl_parsed ? new Date(tgl_parsed) : ''
     },
-    Simpan: {
+    Ubah: {
       type: 'submit'
     }
   }

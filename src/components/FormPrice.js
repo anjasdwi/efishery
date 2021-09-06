@@ -3,14 +3,25 @@ import PropTypes from 'prop-types'
 import JsonToForm from 'json-reactform'
 import {Breadcrumb, BreadcrumbItem} from 'reactstrap'
 import {Link} from 'react-router-dom'
-
-import {Spinner} from 'reactstrap'
+import {Spinner, Button} from 'reactstrap'
 
 import ModalLoader from 'components/modal/loader'
 
-const FormPrice = ({title, breadcrumb, meta, model, onSubmit, loader}) => (
+const FormPrice = ({
+  title,
+  breadcrumb,
+  meta,
+  model,
+  onSubmit,
+  loader,
+  type,
+  onDelete
+}) => (
   <>
-    <h1 className="mb-3">{title}</h1>
+    <div className="mb-3 d-flex align-items-center justify-content-between">
+      <h1>{title}</h1>
+      {type === 'update' && <Button onClick={onDelete}>Hapus</Button>}
+    </div>
     <Breadcrumb>
       <BreadcrumbItem>
         <Link to="/">Home</Link>
@@ -34,7 +45,14 @@ const FormPrice = ({title, breadcrumb, meta, model, onSubmit, loader}) => (
   </>
 )
 
+FormPrice.defaultProps = {
+  type: 'create',
+  onDelete: () => {}
+}
+
 FormPrice.propTypes = {
+  type: PropTypes.string,
+  onDelete: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   breadcrumb: PropTypes.string.isRequired,
   meta: PropTypes.shape({

@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {useHistory} from 'react-router-dom'
 import {numberToCurrency} from 'json-reactform/src/libs/helper'
 
 import {capitalizeTheFirstLetter} from 'utils/string'
 import {dateFormat} from 'utils/date'
 
 const PriceList = ({
+  uuid,
   komoditas,
   size,
   price,
@@ -13,6 +15,8 @@ const PriceList = ({
   area_provinsi,
   tgl_parsed
 }) => {
+  const history = useHistory()
+
   const setArea = () => {
     return `${capitalizeTheFirstLetter(
       area_kota ? area_kota.toLowerCase() : ''
@@ -22,7 +26,10 @@ const PriceList = ({
   }
 
   return (
-    <div className="price-list shadow-sm">
+    <div
+      className="price-list shadow-sm"
+      onClick={() => uuid && history.push(`/update/${uuid}`)}
+    >
       <div className="price-list__date text-muted mb-2">
         Tanggal: {tgl_parsed ? dateFormat(tgl_parsed) : '-'}
       </div>
@@ -56,10 +63,12 @@ PriceList.defaultProps = {
   price: '',
   tgl_parsed: '',
   area_kota: '',
-  area_provinsi: ''
+  area_provinsi: '',
+  uuid: ''
 }
 
 PriceList.propTypes = {
+  uuid: PropTypes.string,
   tgl_parsed: PropTypes.string,
   komoditas: PropTypes.string,
   size: PropTypes.string,

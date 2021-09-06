@@ -8,7 +8,7 @@ import {createNewPrice} from 'store/actions/prices'
 import FormPrice from 'components/FormPrice'
 import useOptions from 'hooks/useOptions'
 
-const CreatePrice = () => {
+const CreatePricePage = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const {meta} = useSelector(({prices}) => prices)
@@ -56,6 +56,6 @@ const CreatePrice = () => {
   )
 }
 
-CreatePrice.propTypes = {}
+CreatePricePage.propTypes = {}
 
-export default CreatePrice
+export default CreatePricePage

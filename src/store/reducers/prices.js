@@ -3,10 +3,12 @@ import {actionTypes} from 'store/actions/prices'
 const initialState = {
   data: {
     prices: [],
+    price: {}
   },
   meta: {
     fullLoadedPrice: false,
-    prices: 'fetch'
+    prices: 'fetch',
+    price: 'fetch'
   }
 }
 
@@ -46,6 +48,22 @@ const priceReducers = (state = initialState, action) => {
         ...state.meta,
         fullLoadedPrice: action.payload
       }
+    }
+  case actionTypes.SET_DATA_PRICE_DETAIL:
+    return {
+      ...state,
+      data: {
+        ...state.data,
+        price: action.payload,
+      },
+    }
+  case actionTypes.SET_META_PRICE_DETAIL:
+    return {
+      ...state,
+      meta: {
+        ...state.meta,
+        price: action.payload,
+      },
     }
   default:
     return state

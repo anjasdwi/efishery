@@ -7,6 +7,7 @@ import Header from 'components/Header'
 
 const HomePage = lazy(() => import('pages/home'))
 const CreatePricePage = lazy(() => import('pages/create'))
+const UpdatePricePage = lazy(() => import('pages/update'))
 
 const AppRouter = () => (
   <>
@@ -22,6 +23,9 @@ const AppRouter = () => (
               </Route>
               <Route path="/create">
                 <CreatePricePage />
+              </Route>
+              <Route path="/update/:id">
+                <UpdatePricePage />
               </Route>
             </Switch>
           </div>
