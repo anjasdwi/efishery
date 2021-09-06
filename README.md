@@ -18,6 +18,7 @@ This project made and developed for a skill test to become frontend engineer at 
 * [Sass](https://sass-lang.com/)
 * [Docker](https://www.docker.com/)
 * [STEIN](https://github.com/steinhq/)
+* [Node Js](https://nodejs.org/en/)
 
 ## Prerequisites
 
@@ -61,6 +62,6 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 ## Contact
 
-Riko Pernando - email@example.com
+Riko Pernando - pernandoriko3@gmail.com
 
 Project Link: [https://github.com/rikopernando/efishery.git](https://github.com/rikopernando/efishery.git)
